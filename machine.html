@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Our Teachable Machine</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="resource.html">Resources</a></li>
+            <li><a href="techhero.html">Tech Heroes</a></li>
+            <li><a href="machine.html">Our Machine</a></li>
+        </ul>
+    </nav>
+  </header>
+ <!-- Resources Section -->
+ <section class="resource-section">
+  <h1>Machine Learning | Our Teachable Machine</h1>
+
+  <!-- Section 1: Project Statement -->
+  <div class="resource-item">
+      <h2>#1 - Project Statement and Overview</h2>
+      <p><strong>What is machine learning?</strong><br>
+      Machine learning is a branch of artificial intelligence that enables computers to learn from data and make predictions or decisions without explicit programming. By identifying patterns in data, machine learning systems improve over time and are used in all sorts of professional fields. We used what we've learned in class about machine learning to teach our own machine!</p> <br>
+       <p><strong>Classifying Images of Bucky Badger, Otters, Raccoons, and Dogs</strong><br>Our project aims to develop a classifier to determine whether an image captured from a webcam depicts Bucky Badger, an otter, a raccoon, or a dog. The reason for choosing these four categories lies in their unique significance and the challenges they present. Bucky Badger, the official mascot of the University of Wisconsin-Madison, is a human-designed symbol representing school spirit and pride, with high recognizability and cultural relevance. In contrast, otters, raccoons, and dogs are real animals (although they are sometimes also adapted to serve as mascots), representing typical visual features in nature. The similarity in size and appearance between otters and raccoons adds complexity to classification, while the diversity in dog breeds introduces a broad range of features for comparison. This selection not only contrasts artificial and natural subjects but also provides an opportunity to test the classifier's ability to handle complex data.</p><br>
+
+       <p>The classifier was developed using Google’s Teachable Machine, with sample images captured and uploaded for the five categories during the training process. The Bucky Badger category consisted of 68 samples, while raccoons, otters, dogs and neutral had 75, 71, 70 and 112 samples, respectively. The screenshot below was taken midway during the training process, and it provides an idea of the kinds of photos that our model was trained on.</p>
+       <br>
+
+  <div class="training-image">
+    <figure>
+      <img src="images/MLTraining.jpeg" alt="training our model" />
+      <figcaption>Inside the process of training our first model.</figcaption>
+  </figure>
+</div>
+<br>
+  
+  </div>
+
+  <!-- Section 2: Challenges-->
+  <div class="resource-item">
+      <h2>#2 - Challenges </h2>
+      <p>One significant challenge was ensuring balanced representation across the four categories. Since Bucky Badger is a widely recognized and frequently photographed mascot, it was relatively easy to collect high-quality, diverse images for this category. In contrast, finding suitable images of otters and raccoons—particularly those with varied backgrounds, lighting, and perspectives—proved more difficult. This discrepancy highlights an inherent challenge in data collection: how differences in data availability and quality influence model performance. As a result, the classifier tends to perform better when identifying Bucky Badger than the other categories.</p><br>
+      <p>Moreover, the visual characteristics of otters and raccoons posed a specific challenge for the classifier. These two animals share similarities in size and coloration, creating visual overlaps that demand higher precision from the classifier. Otters typically have smooth, dark brown or gray fur, streamlined bodies, and smaller frames, while raccoons are distinguished by their black-and-white "mask-like" facial markings and bushy tails. However, when an otter appears in a darker background or a raccoon's facial markings are obscured due to lighting or angle, the classifier might confuse the two. Furthermore, environmental elements add to the complexity of classification; otters and raccoons often inhabit similar habitats like forests or rivers, leading the classifier to rely on irrelevant contextual features rather than the animals' defining characteristics.</p><br>
+      <p>In comparison, dogs exhibit more diverse physical traits, but their distinct body sizes, ear shapes, and coat textures often make them easier to classify. Meanwhile, Bucky Badger stands out with its bright red clothing and distinctive white face mask, making it easier for the model to capture these highly contrasting artificial design features.</p><br>
+
+      <p>After the first iteration, based on reviews from peers and professor, we enhanced our model. We added more training images to achieve a more balanced sample size across categories. Additionally, we introduced a "neutral" category to identify images that don't belong to any of the four main categories, which improved the model's practical utility and accuracy in real-world applications.</p>
+  </div>
+
+
+  <!-- Section 3: Accountability and Ethical Considerations -->
+  <div class="resource-item">
+      <h2>#3 - Accountability and Ethical Considerations</h2>
+      <p>Although our project deals with the relatively simple application of animal image classification, the development process helped us deeply understand a core principle that Buolamwini emphasizes in Unmasking AI: the accuracy and fairness of AI systems heavily depend on the quality and representativeness of training data. Just as Buolamwini revealed how mainstream facial recognition systems exhibit systematic bias due to unbalanced training data, our classifier's difficulties in distinguishing between otters and raccoons stem from limitations in our training dataset. This experience taught us that even in seemingly simple applications, issues of data representation can significantly impact AI system performance. More importantly, it prompted us to consider: if the effects of data bias can be observed in such a small-scale project, then ensuring data diversity and representation becomes even more important in critical domains involving human identity recognition. </p><br>
+      <p>This aligns with themes in Unmasking AI, where Joy Buolamwini emphasizes that AI systems are not neutral but shaped by cultural biases and priorities. By treating a symbolic mascot as equivalent to real animals, the classifier reinforces specific cultural narratives, demonstrating how technology amplifies and embeds human perspectives. This highlights the need for algorithm designers to consider context and cultural adaptability when creating machine learning models to ensure relevance and inclusivity in diverse environments.</p>
+
+  </div>
+  <!-- Section 4: Fairness and Bias -->
+  <div class="resource-item">
+      <h2>#4 - Fairness and Bias</h2>
+      <p>Building upon Buolamwini's insights about bias in AI systems, our project revealed how even seemingly straightforward classification tasks can reflect underlying biases. The varying availability and quality of training data across our categories, from the abundant and standardized images of Bucky Badger to the more limited and diverse photographs of wild animals, directly impacted our classifier's performance. Furthermore, the artificial design of Bucky, such as its highly contrasting patterns, may make it easier for the model to identify compared to the subtler variations in natural animals like otters and raccoons.</p><br>
+
+      <p>Furthermore, Buolamwini's call for "algorithmic justice" challenges us to think beyond technical accuracy to consider broader questions of equity and inclusion. She argues that "who codes matters, who decides what to code matters, and who decides what matters to code matters". This framework prompted us to critically examine our own decision-making process in developing the classifier. While our project scope is limited, it demonstrated how even simple design choices can reflect implicit assumptions and biases. For instance, our focus on achieving high accuracy in distinguishing between similar animals like otters and raccoons led us to question what we prioritize in AI development and why. These considerations echo Buolamwini's emphasis on the importance of conscious, inclusive decision-making in AI development, where technical solutions must be guided by careful consideration of their broader implications and impacts.</p>
+
+    </div>
+
+       <!-- Section 5: Conclusion -->
+  <div class="resource-item">
+    <h2>#5 - Final Thoughts</h2>
+    <p>Our experience developing this classifier revealed how technical challenges in AI development intersect with broader ethical considerations. The unique combination of a human-designed mascot and real animals offered an opportunity to explore questions of representation, bias, and cultural specificity. Lessons from Unmasking AI served as a guiding framework, encouraging us to think beyond technical performance and consider the broader impacts of our work.</p><br>
+    <p>This project underscores that algorithms are not neutral tools—they reflect the values, priorities, and limitations of their creators. Every design decision, from selecting training data to defining the model’s purpose, embeds human biases and assumptions into the system. Recognizing this non-neutrality is critical, as algorithms influence decision-making and the distribution of benefits, underscoring the importance of transparency, fairness, and accountability in design.</p><br>
+
+    <p>By embedding these principles, we aim to ensure AI systems are not only effective but also socially responsible. Transparency helps users understand a model’s reasoning and limitations, fairness reduces biases in data and outcomes, and accountability addresses unintended consequences. In this project, these principles guided our efforts to balance the dataset, document the classifier’s limitations, and reflect on its broader implications.</p>
+    <br>
+
+ <p> <strong> Lessons from our class materials that resonated with us as we completed this assignment:</strong></p><br>
+<p><strong>The importance of representative training data:</strong> Buolamwini's emphasis on diverse, inclusive datasets revealed how AI system performance directly reflects data collection choices and limitations. While our animal classification project may seem simpler than facial recognition systems, the same principle applies - the quality and diversity of our training data directly impacted the model's performance.</p><br>
+<p><strong>The non-neutrality of AI systems:</strong> Buolamwini's concept of the "coded gaze" helped us recognize that AI systems inherently reflect the choices, assumptions, and potential biases of their creators. In our project, this manifested in how we chose our categories and collected our data, acknowledging that even seemingly objective technical decisions can embed particular perspectives.</p><br>
+  <p><strong>The impact of systematic bias:</strong> As mentioned in "Coded Bias", while our animal classification project may not directly affect human lives, it helped us understand how systematic bias in AI systems can have real-world consequences. As Buolamwini demonstrates through her work on facial recognition systems, these impacts can be particularly significant for marginalized communities. This understanding reinforces the importance of careful consideration in AI development, even in seemingly simple applications.</p><br>
+  <p>These reflections also align with the broader critiques raised by Ellen Pao in her article "Tech, Heal Thyself," where she emphasizes the need for systemic accountability and reform in the tech industry. Just as our project revealed how biases in data collection and design can skew outcomes, Pao critiques how tech’s lack of inclusivity and transparency exacerbates existing inequities. This connection reminds us that even small-scale projects can mirror larger systemic issues, and as future contributors to the tech industry, we bear the responsibility to ensure our work upholds principles of fairness, representation, and accountability. By embedding these lessons into our practices, we can move toward a more ethical and equitable technological future. </p>
+</ul><br>
+
+
+    <p><em><strong>References</strong></em></p><br>
+      <p>Buolamwini, J. (2023). Unmasking AI: My mission to protect what is human in a world of machines. New York, NY: Random House.</p><br>
+      <p>Kantayya, S. (Director). (2020). Coded Bias [Film]. 7th Empire Media. </p><br>
+      <p>Pao, E. (2020). Tech, heal thyself. WIRED.</p>
+      </em></p>
+<br>
+    <p><strong><em>Check out our teachable machine in action!</em></strong></p>
+  
+
+
+          <!-- Embedded YouTube Video -->
+          <div class="video-container">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/qRAlkr2wdAc" title="Our Machine in Action" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <br>
+
+        <div class="machinebutton-container">
+          <a href="experiment.html" target="_blank" class="machine-button">CLICK HERE TO TRY OUR MODEL FOR YOURSELF!</a>
+      </div>
+
+      <div class="machinebutton-container">
+        <a href="https://teachablemachine.withgoogle.com/models/-1fUodtgf/" target="_blank" class="machine-button">VIEW OUR MODEL ON THE WEB!</a>
+    </div>
+    <br>
+
+      <p><strong><em>For more information on teachable machines like ours, check out this video from The Coding Train on YouTube!</em></strong></p>
+  
+<!-- Embedded YouTube Video -->
+  <div class="video-container">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/kwcillcWOg0" title="Teachable Machine Video" frameborder="0" allowfullscreen></iframe>
+  </div>
+
+  <div class="linkbutton-container">
+    <a href="https://github.com/zieg341/LIS-500-Project-3---Teachable-Machines" target="_blank">VISIT OUR GITHUB REPOSITORY</a>
+</div>
+
+  </div>
+</section>
+
+
+  <!-- Footer -->
+  <footer>
+    <p>© 2024 Abby Ziegelbein, Eloise Yang, and Maeve White</p>
+</footer>
+
+</body>
+
+</html>
